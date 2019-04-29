@@ -55,7 +55,7 @@
       }
       function buildProfile(user){
         let profile = `
-          <h3>Witaj! ${user.name}</h3>
+          <h3>Witaj ${user.name}!</h3>
           <ul class="list-group">
             <li class="list-group-item">Email: ${user.email}</li>
           </ul>
@@ -86,16 +86,16 @@
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Menu</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Logowanie</a>
+          <li>Logowanie</li>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Główna</a></li>
+            <li><a href="http://yosemite.cba.pl/">Główna</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a id="logout" href="#" onclick="logout()">Wyloguj</a></li>
@@ -110,7 +110,7 @@
     </nav>
 
     <div class="container">
-      <h3 id="heading">Zaloguj się!</h3>
+      <h3 id="heading">Zaloguj się</h3>
       <div id="profile"></div>
     </div>
   </body>
