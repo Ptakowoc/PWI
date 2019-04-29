@@ -8,37 +8,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name = "description" content = "width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
 	
-	<!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '610968715982064');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=610968715982064&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-	
 </head>
 <body>
 	<script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId            : '2328986604025667',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v3.2'
+      appId      : '2328986604025667',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
     });
+   
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});   
+      
   };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+		
+function statusChangeCallback(response){
+	
+}
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+	
     <h1>Park Narodowy Yosemite - wspinaczka sportowa</h1>
     <div>
         <div>
