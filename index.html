@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="http://bootswatch.com/darkly/bootstrap.min.css">
     <style media="screen">
       #fb-btn{margin-top:20px;}
-      #profile, #logout, #feed{display:none}
+      #profile, #logout {display:none}
     </style>
   </head>
   <body>
@@ -29,6 +29,7 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
+		
        function statusChangeCallback(response){
          if(response.status === 'connected'){
            console.log('Logged in and authenticated');
@@ -49,48 +50,27 @@
           if(response && !response.error){
             //console.log(response);
             buildProfile(response);
-          }
-          FB.api('/me/feed', function(response){
-            if(response && !response.error){
-              buildFeed(response);
-            }
-          });
+          };
         })
       }
       function buildProfile(user){
         let profile = `
-          <h3>${user.name}</h3>
+          <h3>Witaj! ${user.name}</h3>
           <ul class="list-group">
-            <li class="list-group-item">User ID: ${user.id}</li>
             <li class="list-group-item">Email: ${user.email}</li>
           </ul>
         `;
         document.getElementById('profile').innerHTML = profile;
       }
-      function buildFeed(feed){
-        let output = '<h3>Witaj!</h3>';
-        for(let i in feed.data){
-          if(feed.data[i].message){
-            output += `
-              <div class="well">
-                ${feed.data[i].message} <span>${feed.data[i].created_time}</span>
-              </div>
-            `;
-          }
-        }
-        document.getElementById('feed').innerHTML = output;
-      }
       function setElements(isLoggedIn){
         if(isLoggedIn){
           document.getElementById('logout').style.display = 'block';
           document.getElementById('profile').style.display = 'block';
-          document.getElementById('feed').style.display = 'block';
           document.getElementById('fb-btn').style.display = 'none';
           document.getElementById('heading').style.display = 'none';
         } else {
           document.getElementById('logout').style.display = 'none';
           document.getElementById('profile').style.display = 'none';
-          document.getElementById('feed').style.display = 'none';
           document.getElementById('fb-btn').style.display = 'block';
           document.getElementById('heading').style.display = 'block';
         }
@@ -132,7 +112,6 @@
     <div class="container">
       <h3 id="heading">Log in to view your profile</h3>
       <div id="profile"></div>
-      <div id="feed"></div>
     </div>
   </body>
 </html>
