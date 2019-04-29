@@ -34,9 +34,28 @@ FB.getLoginStatus(function(response) {
    }(document, 'script', 'facebook-jssdk'));
 		
 function statusChangeCallback(response){
+         if(response.status === 'connected'){
+           console.log('Logged in and authenticated');
+           setElements(true);
+           testAPI();
+         } else {
+           console.log('Not authenticated');
+           setElements(false);
+         }
+       }
 	
-}
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}	
 </script>
+	
+	
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 	
     <h1>Park Narodowy Yosemite - wspinaczka sportowa</h1>
     <div>
