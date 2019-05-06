@@ -9,7 +9,8 @@
 	<meta name = "description" content = "width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
     <style media="screen">
       #fb-btn{margin:15px; text-align: center;}
-		#heading {color: azure;}
+	#heading {color: azure;}
+	#witaj {color: beige;}
       #profile, #logout {display:none}
     </style>
   </head>
@@ -59,7 +60,7 @@
       }
       function buildProfile(user){
         let profile = `
-          <h3>Witaj ${user.name}!</h3>
+          <h3 id="witaj">Witaj ${user.name}!</h3>
           <ul class="list-group">
             <li class="list-group-item">Email: ${user.email}</li>
           </ul>
