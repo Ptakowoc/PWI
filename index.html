@@ -51,7 +51,7 @@
         });
       }
       function testAPI(){
-        FB.api('/me?fields=name,email', function(response){
+        FB.api('/me?fields=name,email,id,picture{url}', function(response){
           if(response && !response.error){
             //console.log(response);
             buildProfile(response);
