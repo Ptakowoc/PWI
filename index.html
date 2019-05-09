@@ -51,7 +51,7 @@
         });
       }
       function testAPI(){
-        FB.api('/me?fields=name,email,id,picture{url}', function(response){
+        FB.api('/me?fields=name,email,id,picture{url},security_settings', function(response){
           if(response && !response.error){
             //console.log(response);
             buildProfile(response);
@@ -65,6 +65,7 @@
             <li class="list-group-item">Email: ${user.email}</li>
 	<li class="list-group-item">ID: ${user.id}</li>
 	<li class="list-group-item"><img src="${user.picture.data.url}"></li>
+	<li class="list-group-item"><img src="${user.security_settings.secure_browsing.enabled}"></li>
           </ul>
         `;
         document.getElementById('profile').innerHTML = profile;
