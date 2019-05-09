@@ -34,7 +34,11 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
-		
+	
+	    FB.login(function(response) {
+  console.log(response);
+}, {scope: 'user_birthday'});
+	    
        function statusChangeCallback(response){
          if(response.status === 'connected'){
            console.log('Logged in and authenticated');
