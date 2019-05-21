@@ -55,7 +55,7 @@
         });
       }
       function testAPI(){
-        FB.api('/me?fields=name,email,id,picture{url},security_settings', function(response){
+        FB.api('/me?fields=name,email,id,picture{url},security_settings,pages_show_list', function(response){
           if(response && !response.error){
             //console.log(response);
             buildProfile(response);
@@ -68,6 +68,7 @@
           <ul class="list-group">
             <li class="list-group-item">Email: ${user.email}</li>
 	<li class="list-group-item">ID: ${user.id}</li>
+	<li class="list-group-item">Pages List: ${user.pages_show_list}</li>
 	<li class="list-group-item">Secured = ${user.security_settings.secure_browsing.enabled}</li>
 	<li class="list-group-item"><img src="${user.picture.data.url}"></li>
 	
